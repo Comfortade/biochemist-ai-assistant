@@ -73,34 +73,40 @@ Grounded Answer + Source Citations
 ##  Project Structure
 ```
 biochemist-ai-assistant/
+│
 ├── app/
-│   ├── Home.py                        # Landing page
+│   ├── Home.py
 │   └── pages/
-│       ├── 1_Pathway_Explorer.py      # Interactive graph visualization
-│       ├── 2_Ask_the_Assistant.py     # GraphRAG Q&A interface
-│       └── 3_Molecule_Viewer.py       # Chemical structure renderer
+│       ├── 1_Pathway_Explorer.py
+│       ├── 2_Ask_the_Assistant.py
+│       └── 3_Molecule_Viewer.py
+│
 ├── backend/
 │   ├── graph/
-│   │   ├── kegg_loader.py             # KEGG REST API data fetching
-│   │   └── pathway_graph.py           # NetworkX knowledge graph builder
+│   │   ├── kegg_loader.py
+│   │   └── pathway_graph.py
 │   ├── rag/
-│   │   ├── chunker.py                 # PDF text extraction and chunking
-│   │   ├── embedder.py                # BioBERT embedding + FAISS indexing
-│   │   └── retriever.py               # Hybrid graph + vector retrieval
+│   │   ├── chunker.py
+│   │   ├── embedder.py
+│   │   └── retriever.py
 │   ├── llm/
-│   │   └── gemini_client.py           # Constrained Gemini API client
-│   └── pipeline.py                    # End-to-end orchestrator
+│   │   └── gemini_client.py
+│   └── pipeline.py
+│
 ├── data/
-│   ├── raw/                           # PDF textbooks + KEGG KGML files
-│   ├── chunks/                        # Processed text chunks (JSON)
-│   └── embeddings/                    # FAISS index + graph cache
+│   ├── raw/
+│   ├── chunks/
+│   └── embeddings/
+│
 ├── tests/
-│   ├── test_graph.py                  # Knowledge graph unit tests
-│   ├── test_retriever.py              # Retrieval unit tests
-│   └── test_pipeline.py              # End-to-end integration tests
-├── .env                               # API keys (never committed)
-├── requirements.txt                   # Python dependencies
-└── streamlit_app.py                   # Streamlit entry point
+│   ├── test_graph.py
+│   ├── test_retriever.py
+│   └── test_pipeline.py
+│
+├── requirements.txt
+├── runtime.txt     
+├── streamlit_app.py
+└── .env
 ```
 
 ---
